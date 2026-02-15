@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.xdcobra.sherpa</groupId>
+  <artifactId>sherpa-onnx-react-native</artifactId>
+  <version>0.3.0</version>
+  <packaging>aar</packaging>
+
+  <name>Sherpa ONNX (xdcobra) — React Native SDK</name>
+  <description>Bundled Sherpa ONNX (k2fsa) with xdcobra React Native integrations and helper libraries.</description>
+  <url>https://github.com/XDcobra/</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>xdcobra</id>
+      <name>XDCobra</name>
+    </developer>
+  </developers>
+
+  <!-- Declare dependencies only if they are NOT bundled inside the AAR -->
+</project>
