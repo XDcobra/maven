@@ -1,61 +1,61 @@
-# Beitragen zum Maven Repository
+# Contributing to the Maven repository
 
-Vielen Dank für Ihr Interesse an diesem Maven-Repository!
+Thank you for your interest in this Maven repository!
 
-## Neues Artifact veröffentlichen
+## Publishing a new artifact
 
-### Methode 1: Automatisches Skript verwenden
+### Method 1: Use the automation script
 
-Das einfachste Verfahren ist die Verwendung des `publish-artifact.sh` Skripts:
+The easiest way is to use the `publish-artifact.sh` script:
 
 ```bash
-./publish-artifact.sh <groupId> <artifactId> <version> <pfad-zur-aar-datei>
+./publish-artifact.sh <groupId> <artifactId> <version> <path-to-aar-file>
 ```
 
-**Beispiel für sherpa-onnx:**
+Example for sherpa-onnx:
 ```bash
-./publish-artifact.sh com.k2fsa.sherpa.onnx sherpa-onnx 1.0.0 /pfad/zu/sherpa-onnx.aar
+./publish-artifact.sh com.k2fsa.sherpa.onnx sherpa-onnx 1.0.0 /path/to/sherpa-onnx.aar
 ```
 
-Das Skript:
-- Erstellt die Verzeichnisstruktur
-- Kopiert die AAR-Datei
-- Generiert die POM-Datei
-- Erstellt alle Checksums (MD5 und SHA1)
-- Aktualisiert die maven-metadata.xml
+The script:
+- Creates the directory structure
+- Copies the AAR file
+- Generates the POM file
+- Creates all checksums (MD5 and SHA1)
+- Updates `maven-metadata.xml`
 
-Nach dem Ausführen:
+After running the script:
 ```bash
 git add com/
 git commit -m "Add sherpa-onnx version 1.0.0"
 git push
 ```
 
-### Methode 2: Manuell
+### Method 2: Manual
 
-Wenn Sie manuell vorgehen möchten, folgen Sie der Anleitung in der [README.md](README.md).
+If you prefer to do it manually, follow the instructions in the `README.md`.
 
-## Namenskonventionen
+## Naming conventions
 
 ### GroupId
-Die GroupId sollte Ihrer Organisation entsprechen:
-- Format: `com.firma.produkt`
-- Für sherpa-onnx: `com.k2fsa.sherpa.onnx`
+The GroupId should reflect your organization:
+- Format: `com.company.product`
+- For sherpa-onnx: `com.k2fsa.sherpa.onnx`
 
 ### ArtifactId
-Der ArtifactId sollte den Namen der Bibliothek widerspiegeln:
-- Format: `bibliotheksname`
-- Für sherpa-onnx: `sherpa-onnx`
+The ArtifactId should reflect the library name:
+- Format: `library-name`
+- For sherpa-onnx: `sherpa-onnx`
 
 ### Version
-Verwenden Sie [Semantic Versioning](https://semver.org/):
+Use Semantic Versioning: https://semver.org/
 - Format: `MAJOR.MINOR.PATCH`
-- Beispiel: `1.0.0`, `1.2.3`, `2.0.0-beta1`
+- Examples: `1.0.0`, `1.2.3`, `2.0.0-beta1`
 
-## Verzeichnisstruktur
+## Directory layout
 
 ```
-<groupId als Pfad>/<artifactId>/<version>/
+<groupId as path>/<artifactId>/<version>/
 ├── <artifactId>-<version>.aar
 ├── <artifactId>-<version>.pom
 ├── <artifactId>-<version>.aar.md5
@@ -64,23 +64,23 @@ Verwenden Sie [Semantic Versioning](https://semver.org/):
 └── <artifactId>-<version>.pom.sha1
 ```
 
-## Checkliste vor dem Commit
+## Checklist before committing
 
-- [ ] AAR-Datei ist korrekt benannt: `<artifactId>-<version>.aar`
-- [ ] POM-Datei existiert und ist korrekt
-- [ ] Alle Checksums wurden generiert
-- [ ] maven-metadata.xml wurde aktualisiert
-- [ ] README.md wurde aktualisiert (wenn neues Artifact)
-- [ ] Dateien wurden getestet (lokal Maven-Repository testen)
+- [ ] AAR file is named correctly: `<artifactId>-<version>.aar`
+- [ ] POM file exists and is correct
+- [ ] All checksums have been generated
+- [ ] `maven-metadata.xml` has been updated
+- [ ] `README.md` has been updated (if adding a new artifact)
+- [ ] Files have been tested (try a local Maven repo)
 
-## Testen vor der Veröffentlichung
+## Testing before publishing
 
-Sie können Ihr lokales Repository testen, bevor Sie pushen:
+You can test your local repository before pushing:
 
 ```gradle
 repositories {
     maven {
-        url 'file:///pfad/zum/lokalen/maven-repo/'
+        url 'file:///path/to/local/maven-repo/'
     }
 }
 
@@ -91,13 +91,13 @@ dependencies {
 
 ## GitHub Pages
 
-Nach dem Push zu `main` oder `master`:
-1. Die GitHub Actions Workflow wird automatisch ausgelöst
-2. Die Seite wird zu GitHub Pages deployed
-3. Das Repository ist unter `https://xdcobra.github.io/maven/` verfügbar
+After pushing to `main` or `master`:
+1. The GitHub Actions workflow will run automatically
+2. The site will be deployed to GitHub Pages
+3. The repository will be available at `https://xdcobra.github.io/maven/`
 
-Die Bereitstellung kann einige Minuten dauern.
+Deployment may take a few minutes.
 
-## Fragen?
+## Questions?
 
-Bei Fragen oder Problemen öffnen Sie bitte ein Issue in diesem Repository.
+If you have questions or run into issues, please open an issue in this repository.

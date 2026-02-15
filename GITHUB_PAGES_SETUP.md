@@ -1,94 +1,94 @@
-# GitHub Pages Einrichtung
+# GitHub Pages Setup
 
-## Schritt-für-Schritt Anleitung zur Aktivierung von GitHub Pages
+## Step-by-step guide to enabling GitHub Pages
 
-### 1. Repository-Einstellungen öffnen
+### 1. Open repository settings
 
-Besuchen Sie: https://github.com/XDcobra/maven/settings/pages
+Visit: https://github.com/XDcobra/maven/settings/pages
 
-### 2. Build and Deployment konfigurieren
+### 2. Configure Build and Deployment
 
-**Source (Quelle):**
-- Wählen Sie: `Deploy from a branch`
+**Source:**
+- Select: `Deploy from a branch`
 
 **Branch:**
-- Branch: `main` (oder `master`, je nachdem welcher Branch existiert)
+- Branch: `main` (or `master`, depending on which branch exists)
 - Folder: `/ (root)`
 
-**Klicken Sie auf "Save"**
+**Click "Save"**
 
-### 3. Warten Sie auf Deployment
+### 3. Wait for the deployment
 
-- GitHub wird automatisch die GitHub Actions Workflow auslösen
-- Dies dauert normalerweise 1-2 Minuten
-- Sie können den Fortschritt unter https://github.com/XDcobra/maven/actions überwachen
+- GitHub will automatically trigger the GitHub Actions workflow
+- This usually takes 1–2 minutes
+- You can monitor progress at https://github.com/XDcobra/maven/actions
 
-### 4. Überprüfen Sie die URL
+### 4. Verify the URL
 
-Nach erfolgreichem Deployment ist Ihr Maven Repository verfügbar unter:
+After a successful deployment, your Maven repository will be available at:
 ```
 https://xdcobra.github.io/maven/
 ```
 
-### 5. Testen Sie die Konfiguration
+### 5. Test the configuration
 
-Öffnen Sie die URL im Browser. Sie sollten die Index-Seite mit Informationen über das Maven Repository sehen.
+Open the URL in a browser. You should see the index page with information about the Maven repository.
 
-## GitHub Actions Workflow
+## GitHub Actions workflow
 
-Die Datei `.github/workflows/pages.yml` ist bereits konfiguriert und wird automatisch:
-- Bei jedem Push zu `main` oder `master` ausgelöst
-- Die Repository-Inhalte zu GitHub Pages deployen
-- Die URL aktualisieren
+The file `.github/workflows/pages.yml` is already configured and will automatically:
+- Run on every push to `main` or `master`
+- Deploy the repository contents to GitHub Pages
+- Update the Pages URL
 
-## Fehlerbehebung
+## Troubleshooting
 
-### GitHub Pages zeigt "404 - File not found"
+### GitHub Pages shows "404 - File not found"
 
-**Lösung:**
-1. Überprüfen Sie, ob GitHub Pages in den Einstellungen aktiviert ist
-2. Stellen Sie sicher, dass der richtige Branch ausgewählt ist
-3. Warten Sie 2-5 Minuten nach der ersten Aktivierung
-4. Löschen Sie den Browser-Cache und versuchen Sie es erneut
+**Fix:**
+1. Check that GitHub Pages is enabled in the repository settings
+2. Ensure the correct branch is selected
+3. Wait 2–5 minutes after the initial activation
+4. Clear your browser cache and try again
 
-### GitHub Actions Workflow schlägt fehl
+### GitHub Actions workflow fails
 
-**Lösung:**
-1. Gehen Sie zu https://github.com/XDcobra/maven/actions
-2. Klicken Sie auf den fehlgeschlagenen Workflow
-3. Überprüfen Sie die Fehlerprotokolle
-4. Stellen Sie sicher, dass die Berechtigungen korrekt sind:
+**Fix:**
+1. Go to https://github.com/XDcobra/maven/actions
+2. Click the failed workflow run
+3. Inspect the error logs
+4. Make sure the permissions are set correctly:
    - Settings → Actions → General
    - Workflow permissions: "Read and write permissions"
 
-### Seite wird nicht aktualisiert
+### Site not updating
 
-**Lösung:**
-1. Überprüfen Sie den GitHub Actions Tab
-2. Warten Sie, bis der Workflow abgeschlossen ist
-3. Es kann bis zu 10 Minuten dauern, bis Änderungen sichtbar sind
-4. Löschen Sie den Browser-Cache
+**Fix:**
+1. Check the GitHub Actions tab
+2. Wait for the workflow to finish
+3. It can take up to 10 minutes for changes to appear
+4. Clear your browser cache
 
-## Permissions (Berechtigungen)
+## Permissions
 
-Die GitHub Actions benötigen folgende Berechtigungen (bereits in der Workflow-Datei konfiguriert):
-- `contents: read` - Lesen des Repository-Inhalts
-- `pages: write` - Schreiben zu GitHub Pages
-- `id-token: write` - OIDC Token für Deployment
+The GitHub Actions require the following permissions (already configured in the workflow file):
+- `contents: read` - read repository contents
+- `pages: write` - write to GitHub Pages
+- `id-token: write` - OIDC token for deployment
 
-Diese werden automatisch von GitHub gewährt, wenn GitHub Pages aktiviert ist.
+These are granted automatically by GitHub when Pages is enabled.
 
-## Custom Domain (Optional)
+## Custom domain (optional)
 
-Wenn Sie eine eigene Domain verwenden möchten:
+If you want to use a custom domain:
 
-1. Gehen Sie zu Settings → Pages
-2. Geben Sie Ihre Domain unter "Custom domain" ein
-3. Folgen Sie den Anweisungen zur DNS-Konfiguration
-4. Aktivieren Sie "Enforce HTTPS" nach erfolgreicher Verifizierung
+1. Go to Settings → Pages
+2. Enter your domain under "Custom domain"
+3. Follow the DNS configuration instructions
+4. Enable "Enforce HTTPS" after successful verification
 
-## Weitere Informationen
+## More information
 
-- [GitHub Pages Dokumentation](https://docs.github.com/en/pages)
-- [GitHub Actions Dokumentation](https://docs.github.com/en/actions)
-- [Jekyll Themes](https://pages.github.com/themes/)
+- [GitHub Pages documentation](https://docs.github.com/en/pages)
+- [GitHub Actions documentation](https://docs.github.com/en/actions)
+- [Jekyll themes](https://pages.github.com/themes/)
