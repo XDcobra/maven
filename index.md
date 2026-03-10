@@ -13,10 +13,9 @@ https://xdcobra.github.io/maven/
 | Artifact          | Description |
 |-------------------|-------------|
 | **sherpa-onnx**   | sherpa-onnx native libs (all ABIs), C-API headers, Kotlin/Java API. Depends on `com.xdcobra.sherpa:onnxruntime`. |
-| **ffmpeg**        | FFmpeg + libshine (audio-only), native libs and headers for all ABIs. |
+| **ffmpeg**        | FFmpeg + libshine (audio-only) + libopus, native libs and headers for all ABIs. |
 | **libarchive**    | libarchive native libs and public headers for all ABIs. |
 | **onnxruntime**   | ONNX Runtime with QNN, NNAPI, XNNPACK (all ABIs). |
-| **sherpa-onnx-react-native** | Standalone AAR of the React Native library (optional). |
 
 ## Usage (Gradle)
 
@@ -72,9 +71,6 @@ maven/
             ├── onnxruntime/
             │   ├── maven-metadata.xml
             │   └── [version]/
-            └── sherpa-onnx-react-native/
-                ├── maven-metadata.xml
-                └── [version]/
 ```
 
 ## Publishing
