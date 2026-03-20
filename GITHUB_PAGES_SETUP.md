@@ -58,7 +58,7 @@ The file `.github/workflows/pages.yml` is already configured and will automatica
 2. Click the failed workflow run
 3. Inspect the error logs
 4. Make sure the permissions are set correctly:
-   - Settings → Actions → General
+   - Settings --> Actions --> General
    - Workflow permissions: "Read and write permissions"
 
 ### Site not updating
@@ -82,7 +82,7 @@ These are granted automatically by GitHub when Pages is enabled.
 
 If you want to use a custom domain:
 
-1. Go to Settings → Pages
+1. Go to Settings --> Pages
 2. Enter your domain under "Custom domain"
 3. Follow the DNS configuration instructions
 4. Enable "Enforce HTTPS" after successful verification
