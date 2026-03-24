@@ -1,6 +1,6 @@
 # Maven Repository
 
-This repository serves as a custom Maven repository for Android AARs under the **com.xdcobra.sherpa** group. It is used by [react-native-sherpa-onnx](https://github.com/XDcobra/react-native-sherpa-onnx) and related projects.
+This repository serves as a custom Maven repository for Android AARs under **com.xdcobra.*** groups (for example `com.xdcobra.sherpa`, `com.xdcobra.openssl`, and `com.xdcobra.libcurl`). It is used by [react-native-sherpa-onnx](https://github.com/XDcobra/react-native-sherpa-onnx) and related projects.
 
 ## Repository URL
 
@@ -15,6 +15,7 @@ https://xdcobra.github.io/maven/
 | **sherpa-onnx**   | sherpa-onnx native libs (all ABIs), C-API headers, Kotlin/Java API. Depends on `com.xdcobra.sherpa:onnxruntime`. |
 | **ffmpeg**        | FFmpeg + libshine (audio-only) + libopus, native libs and headers for all ABIs. |
 | **libarchive**    | libarchive native libs and public headers for all ABIs. |
+| **libcurl**       | libcurl native libs for all ABIs. Published as `libcurl-core` and `libcurl-openssl` variants. |
 | **onnxruntime**   | ONNX Runtime with QNN, NNAPI, XNNPACK (all ABIs). |
 | **openssl**       | OpenSSL native libs (all ABIs), static and shared libraries, and headers. |
 
@@ -47,6 +48,12 @@ dependencies {
     
     // OpenSSL (Native static and shared libraries)
     implementation 'com.xdcobra.openssl:openssl:3.6.1-1@aar'
+
+    // libcurl (without SSL backend)
+    // implementation 'com.xdcobra.libcurl:libcurl-core:8.19.0-1@aar'
+
+    // libcurl + OpenSSL backend (recommended)
+    implementation 'com.xdcobra.libcurl:libcurl-openssl:8.19.0-1@aar'
 }
 ```
 
@@ -79,6 +86,13 @@ maven/
             ├── openssl/
             │   ├── maven-metadata.xml
             │   └── [version]/
+        └── libcurl/
+            ├── libcurl-core/
+            │   ├── maven-metadata.xml
+            │   └── [version]/
+            └── libcurl-openssl/
+                ├── maven-metadata.xml
+                └── [version]/
 ```
 
 ## Publishing
