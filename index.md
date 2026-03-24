@@ -8,7 +8,7 @@ This repository serves as a custom Maven repository for Android AARs under the *
 https://xdcobra.github.io/maven/
 ```
 
-## Available Artifacts (com.xdcobra.sherpa)
+## Available Artifacts
 
 | Artifact          | Description |
 |-------------------|-------------|
@@ -16,6 +16,7 @@ https://xdcobra.github.io/maven/
 | **ffmpeg**        | FFmpeg + libshine (audio-only) + libopus, native libs and headers for all ABIs. |
 | **libarchive**    | libarchive native libs and public headers for all ABIs. |
 | **onnxruntime**   | ONNX Runtime with QNN, NNAPI, XNNPACK (all ABIs). |
+| **openssl**       | OpenSSL native libs (all ABIs), static and shared libraries, and headers. |
 
 ## Usage (Gradle)
 
@@ -43,6 +44,9 @@ dependencies {
 
     // ONNX Runtime (sherpa-onnx POM may pull this in; or add explicitly)
     // implementation 'com.xdcobra.sherpa:onnxruntime:1.24.2-qnn2.43.1.260218@aar'
+    
+    // OpenSSL (Native static and shared libraries)
+    implementation 'com.xdcobra.openssl:openssl:3.6.1-1@aar'
 }
 ```
 
@@ -69,6 +73,10 @@ maven/
             │   ├── maven-metadata.xml
             │   └── [version]/
             ├── onnxruntime/
+            │   ├── maven-metadata.xml
+            │   └── [version]/
+        └── openssl/
+            ├── openssl/
             │   ├── maven-metadata.xml
             │   └── [version]/
 ```

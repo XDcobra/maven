@@ -22,6 +22,22 @@ dependencies {
 }
 ```
 
+### OpenSSL (Mobile Native Prebuilt)
+
+This repository hosts precompiled native `openssl` libraries for Android ABIs (`armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`) built from [openssl-ios-android-prebuilt-and-buildscripts](https://github.com/XDcobra/openssl-ios-android-prebuilt-and-buildscripts).
+
+```gradle
+repositories {
+    maven {
+        url 'https://xdcobra.github.io/maven/'
+    }
+}
+
+dependencies {
+    implementation 'com.xdcobra.openssl:openssl:3.6.1-1@aar'
+}
+```
+
 ## Usage in Android projects
 
 ### Gradle (Kotlin DSL)
