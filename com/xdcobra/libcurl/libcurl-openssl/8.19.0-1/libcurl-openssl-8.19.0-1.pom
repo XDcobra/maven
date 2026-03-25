@@ -7,5 +7,5 @@
   <artifactId>libcurl-openssl</artifactId>
   <version>8.19.0-1</version>
   <packaging>aar</packaging>
-  <description>libcurl with OpenSSL Support for Android</description>
+  <description>libcurl with OpenSSL (shared) for Android — AAR includes libcurl.so, libcrypto.so, libssl.so per ABI</description>
 </project>
