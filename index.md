@@ -15,6 +15,7 @@ https://xdcobra.github.io/maven/
 | **sherpa-onnx**   | sherpa-onnx native libs (all ABIs), C-API headers, Kotlin/Java API. Depends on `com.xdcobra.sherpa:onnxruntime`. |
 | **ffmpeg**        | FFmpeg + libshine (audio-only) + libopus, native libs and headers for all ABIs. |
 | **libarchive**    | libarchive native libs and public headers for all ABIs. |
+| **libwebp**       | libwebp (+ sharpyuv) native libs and headers for all ABIs (ImageBuffer WebP decode). |
 | **libcurl**       | libcurl native libs for all ABIs. Published as `libcurl-core` and `libcurl-openssl` variants. |
 | **onnxruntime**   | ONNX Runtime with QNN, NNAPI, XNNPACK (all ABIs). |
 | **openssl**       | OpenSSL native libs (all ABIs), static and shared libraries, and headers. |
@@ -42,6 +43,9 @@ dependencies {
 
     // libarchive (for react-native-sherpa-onnx Android)
     implementation 'com.xdcobra.sherpa:libarchive:3.8.5@aar'
+
+    // libwebp (ImageBuffer WebP decode)
+    implementation 'com.xdcobra.sherpa:libwebp:1.6.0@aar'
 
     // ONNX Runtime (sherpa-onnx POM may pull this in; or add explicitly)
     // implementation 'com.xdcobra.sherpa:onnxruntime:1.24.2-qnn2.43.1.260218@aar'
@@ -77,6 +81,9 @@ maven/
             │   ├── maven-metadata.xml
             │   └── [version]/
             ├── libarchive/
+            │   ├── maven-metadata.xml
+            │   └── [version]/
+            ├── libwebp/
             │   ├── maven-metadata.xml
             │   └── [version]/
             ├── onnxruntime/
