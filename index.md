@@ -16,6 +16,7 @@ https://xdcobra.github.io/maven/
 | **ffmpeg**        | FFmpeg + libshine (audio-only) + libopus, native libs and headers for all ABIs. |
 | **libarchive**    | libarchive native libs and public headers for all ABIs. |
 | **libwebp**       | libwebp (+ sharpyuv) native libs and headers for all ABIs (ImageBuffer WebP decode). |
+| **lexbor**        | lexbor native libs and headers for all ABIs (EPUB/XHTML HTML parse). |
 | **libcurl**       | libcurl native libs for all ABIs. Published as `libcurl-core` and `libcurl-openssl` variants. |
 | **onnxruntime**   | ONNX Runtime with QNN, NNAPI, XNNPACK (all ABIs). |
 | **openssl**       | OpenSSL native libs (all ABIs), static and shared libraries, and headers. |
@@ -46,6 +47,9 @@ dependencies {
 
     // libwebp (ImageBuffer WebP decode)
     implementation 'com.xdcobra.sherpa:libwebp:1.6.0@aar'
+
+    // lexbor (EPUB/XHTML HTML parse)
+    implementation 'com.xdcobra.sherpa:lexbor:3.0.0@aar'
 
     // ONNX Runtime (sherpa-onnx POM may pull this in; or add explicitly)
     // implementation 'com.xdcobra.sherpa:onnxruntime:1.24.2-qnn2.43.1.260218@aar'
@@ -84,6 +88,9 @@ maven/
             │   ├── maven-metadata.xml
             │   └── [version]/
             ├── libwebp/
+            │   ├── maven-metadata.xml
+            │   └── [version]/
+            ├── lexbor/
             │   ├── maven-metadata.xml
             │   └── [version]/
             ├── onnxruntime/

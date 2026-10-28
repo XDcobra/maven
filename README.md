@@ -12,6 +12,7 @@ This is XDcobra's custom Maven repository for hosting Android AAR artifacts (pub
 | ffmpeg | 8.0.1 | `com.xdcobra.sherpa:ffmpeg@aar` | FFmpeg build for Android (audio-oriented). |
 | libarchive | 3.8.5 | `com.xdcobra.sherpa:libarchive@aar` | Prebuilt libarchive native libs and headers. |
 | libwebp | 1.6.0 | `com.xdcobra.sherpa:libwebp@aar` | Prebuilt libwebp (+ sharpyuv) native libs and headers (ImageBuffer WebP). |
+| lexbor | 3.0.0 | `com.xdcobra.sherpa:lexbor@aar` | Prebuilt lexbor native libs and headers (EPUB/XHTML HTML parse). |
 | onnxruntime | 1.24.2-qnn2.43.1.260218 | `com.xdcobra.sherpa:onnxruntime@aar` | ONNX Runtime artifacts used by Sherpa packages. |
 | openssl | 3.6.1-1 | `com.xdcobra.openssl:openssl@aar` | OpenSSL native libraries for Android ABIs. |
 | libcurl-core | 8.19.0-1 | `com.xdcobra.libcurl:libcurl-core@aar` | libcurl variant without SSL backend. |
@@ -43,6 +44,9 @@ dependencies {
     // libwebp (ImageBuffer WebP decode)
     implementation 'com.xdcobra.sherpa:libwebp:1.6.0@aar'
 
+    // lexbor (EPUB/XHTML HTML parse)
+    implementation 'com.xdcobra.sherpa:lexbor:3.0.0@aar'
+
     // onnxruntime (optional explicit dependency)
     // implementation 'com.xdcobra.sherpa:onnxruntime:1.24.2-qnn2.43.1.260218@aar'
 
@@ -73,6 +77,7 @@ dependencies {
     implementation("com.xdcobra.sherpa:ffmpeg:8.0.1@aar")
     implementation("com.xdcobra.sherpa:libarchive:3.8.5@aar")
     implementation("com.xdcobra.sherpa:libwebp:1.6.0@aar")
+    implementation("com.xdcobra.sherpa:lexbor:3.0.0@aar")
     implementation("com.xdcobra.openssl:openssl:3.6.1-1@aar")
     implementation("com.xdcobra.libcurl:libcurl-openssl:8.19.0-1@aar")
 }
